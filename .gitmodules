@@ -1,0 +1,9 @@
+[submodule "simple-clicker-unity/Assets/DTExtrasModule"]
+	path = simple-clicker-unity/Assets/DTExtrasModule
+	url = https://github.com/DarrenTsung/DTExtrasModule.git
+[submodule "simple-clicker-unity/Assets/DTGameEngineModule"]
+	path = simple-clicker-unity/Assets/DTGameEngineModule
+	url = https://github.com/DarrenTsung/DTGameEngineModule.git
+[submodule "simple-clicker-unity/Assets/DTCoreModule"]
+	path = simple-clicker-unity/Assets/DTCoreModule
+	url = https://github.com/DarrenTsung/DTCoreModule.git
