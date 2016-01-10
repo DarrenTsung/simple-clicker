@@ -8,7 +8,7 @@ namespace DT.Game {
 	public class TitleScreenView : BasicView {
 		// PRAGMA MARK - Public Interface
 		public override void Show() {
-			this.StartCoroutine(this.MoveFromPositionsLinear(new Vector2(-500.0f, 0.0f), new Vector2(0.0f, 0.0f), 0.5f, () => {
+			this.StartCoroutine(this.MoveBetweenPositionsLinear(new Vector2(-500.0f, 0.0f), new Vector2(0.0f, 0.0f), 0.5f, () => {
 				this.EndShow();
 			}));
 			
@@ -16,7 +16,7 @@ namespace DT.Game {
 		}
 		
 		public override void Dismiss() {
-			this.StartCoroutine(this.MoveFromPositionsLinear(new Vector2(0.0f, 0.0f), new Vector2(500.0f, 0.0f), 0.5f, () => {
+			this.StartCoroutine(this.MoveBetweenPositionsLinear(new Vector2(0.0f, 0.0f), new Vector2(500.0f, 0.0f), 0.5f, () => {
 				this.EndDismiss();
 			}));
 			
