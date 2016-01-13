@@ -85,6 +85,45 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &228633733
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 228633734}
+  - 114: {fileID: 228633735}
+  m_Layer: 0
+  m_Name: AppInit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &228633734
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 228633733}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 887436112}
+  m_RootOrder: 2
+--- !u!114 &228633735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 228633733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a62434f6d83cd4237a0bc4daf2f6f224, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &411983475
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,7 +134,7 @@ GameObject:
   - 4: {fileID: 411983476}
   - 114: {fileID: 411983477}
   m_Layer: 0
-  m_Name: ViewControllerManager
+  m_Name: ViewControllerPresentationManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,7 +160,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 411983475}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0a70d06992b44bf3b69e174c95b8e09, type: 3}
+  m_Script: {fileID: 11500000, guid: 166f99b3c05b9471691b84661c4cf8b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _inspectorViewControllerQueue: []
@@ -306,6 +345,7 @@ Transform:
   m_Children:
   - {fileID: 1281173163}
   - {fileID: 1822344331}
+  - {fileID: 228633734}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!1 &910571609
@@ -396,7 +436,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .631704152, g: .933823526, b: .883817613, a: .0196078438}
+  m_BackGroundColor: {r: .631704152, g: .821310163, b: .933823526, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0

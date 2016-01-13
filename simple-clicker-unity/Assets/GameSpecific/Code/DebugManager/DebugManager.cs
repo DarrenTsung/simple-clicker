@@ -26,14 +26,14 @@ namespace DT.Game {
     
     protected void Update() {
       if (Input.GetKeyDown(KeyCode.H)) {
-        ViewControllerManager.Instance.Present(this.VC1, VCPresentationType.IMMEDIATE);
+        ViewControllerPresentationManager.Instance.Present(this.VC1, VCPresentationType.IMMEDIATE);
       }
       if (Input.GetKeyDown(KeyCode.Y)) {
         this.VC1.Dismiss();
       }
       
       if (Input.GetKeyDown(KeyCode.J)) {
-        ViewControllerManager.Instance.Present(this.VC2, VCPresentationType.QUEUED);
+        ViewControllerPresentationManager.Instance.Present(this.VC2, VCPresentationType.QUEUED);
       }
       if (Input.GetKeyDown(KeyCode.U)) {
         this.VC2.Dismiss();

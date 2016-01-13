@@ -9,5 +9,11 @@ namespace DT.Game {
     public TitleScreenViewController() {
       this._viewPrefabName = "TitleScreenView";
     }
+    
+    // PRAGMA MARK - Button Callbacks
+    public void OnStartGameTapped() {
+      ViewControllerPresentationManager.Instance.Present(new GameViewController(), VCPresentationType.QUEUED, VCPriority.HIGH);
+      this.Dismiss();
+    }
   }
 }
