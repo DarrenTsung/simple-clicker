@@ -6,8 +6,17 @@ using System.Collections.Generic;
 
 namespace DT.Game {
   public class GameViewController : BasicViewController {
-    public GameViewController() {
+    public GameSession gameSession;
+    
+    public GameViewController(GameSession gameSession) {
       this._viewPrefabName = "GameView";
+      this.gameSession = gameSession;
+    }
+    
+    
+    // PRAGMA MARK - Button Callbacks
+    public void OnHarvestTapped() {
+      this.gameSession.HandleHarvestEvent();
     }
   }
 }

@@ -7,7 +7,7 @@ namespace DT.Game {
 		// PRAGMA MARK - Internal
 		protected override void InitializeGame() {
 			base.InitializeGame();
-      ViewControllerPresentationManager.Instance.Present(new TitleScreenViewController(), VCPresentationType.IMMEDIATE);
+      Toolbox.GetInstance<ViewControllerActivePresentationManager>().Present(new TitleScreenViewController());
 		}
 	}
 }

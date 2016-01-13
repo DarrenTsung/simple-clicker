@@ -12,8 +12,8 @@ namespace DT.Game {
     
     // PRAGMA MARK - Button Callbacks
     public void OnStartGameTapped() {
-      ViewControllerPresentationManager.Instance.Present(new GameViewController(), VCPresentationType.QUEUED, VCPriority.HIGH);
-      this.Dismiss();
+      GameSession newGameSession = Toolbox.GetInstance<GameSessionManager>().StartNewGameSession();
+      Toolbox.GetInstance<ViewControllerActivePresentationManager>().ReplaceActiveViewControllerWith(new GameViewController(newGameSession));
     }
   }
 }

@@ -6,17 +6,12 @@ using UnityEngine.UI;
 namespace DT.Game {
 	public class SimpleUITimer : MonoBehaviour {
 		// PRAGMA MARK - Public Interface
-		public float baseTime;
-		
-		public void ResetTimeLeft() {
-			this._timeLeft = this.baseTime;
+		public void SetTimeRemainingProvider(ITimeRemainingProvider timeRemainingProvider) {
+			this._timeRemainingProvider = timeRemainingProvider;
 		}
 		
 		
 		// PRAGMA MARK - Internal
-		[SerializeField, ReadOnly]
-		private float _timeLeft;
-		
 		[SerializeField]
 		private Color _maxColor;
 		[SerializeField]
@@ -27,27 +22,20 @@ namespace DT.Game {
 		[SerializeField, ReadOnly]
 		private float _baseWidth;
 		
+		private ITimeRemainingProvider _timeRemainingProvider;
+		
 		
 		protected void Awake() {
 			RectTransform rectTransform = (RectTransform)transform;
 			this._baseWidth = rectTransform.sizeDelta.x;
-			this.ResetTimeLeft();
 		}
 		
 		protected void Update() {
-			this.UpdateTimeLeft();
 			this.UpdateDisplay();
-		}
-	
-		protected void UpdateTimeLeft() {
-			this._timeLeft -= Time.deltaTime;
-			if (this._timeLeft < 0.0f) {
-				this._timeLeft = 0.0f;
-			}
 		}
 		
 		protected void UpdateDisplay() {
-			float percentTimeRemaining = this._timeLeft / this.baseTime;
+			float percentTimeRemaining = _timeRemainingProvider.PercentTimeRemaining;
 			
 			Color displayColor = Color.Lerp(_minColor, _maxColor, percentTimeRemaining);
 			_barImage.color = displayColor;

@@ -26,13 +26,17 @@ namespace DT.Game {
 		
 		// PRAGMA MARK - Button Callbacks
 		public void OnHarvestTapped() {
-			this._timer.ResetTimeLeft();
+			this._viewController.OnHarvestTapped();
 		}
 		
 		
 		// PRAGMA MARK - Internal
 		[SerializeField] 
 		private SimpleUITimer _timer;
+		
+		protected void Start() {
+			this._timer.SetTimeRemainingProvider(this._viewController.gameSession);
+		}
 		
 		protected IEnumerator MoveBetweenPositions(Vector2 startPosition, Vector2 endPosition, float time, Action callback) {
 			this.transform.localPosition = startPosition;
