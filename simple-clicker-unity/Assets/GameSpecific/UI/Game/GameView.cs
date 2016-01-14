@@ -7,6 +7,8 @@ using System.Collections;
 namespace DT.Game {
 	public class GameView : BasicView<GameViewController> {
 		// PRAGMA MARK - Public Interface
+		public Text scoreText;
+		
 		public override void Show() {
 			this.StartCoroutine(this.MoveBetweenPositions(new Vector2(0.0f, 700.0f), new Vector2(0.0f, 0.0f), time : 0.4f, callback: () => {
 				this.EndShow();
@@ -36,6 +38,15 @@ namespace DT.Game {
 		
 		protected void Start() {
 			this._timer.SetTimeRemainingProvider(this._viewController.gameSession);
+			this._viewController.gameSession.OnScoreChanged += this.HandleScoreChanged;
+		}
+		
+		protected void OnDisable() {
+			this._viewController.gameSession.OnScoreChanged -= this.HandleScoreChanged;
+		}
+		
+		protected void HandleScoreChanged(int newScore) {
+			this.scoreText.text = newScore.ToString();
 		}
 		
 		protected IEnumerator MoveBetweenPositions(Vector2 startPosition, Vector2 endPosition, float time, Action callback) {

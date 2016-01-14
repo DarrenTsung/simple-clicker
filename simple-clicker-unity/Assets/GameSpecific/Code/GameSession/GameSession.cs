@@ -7,8 +7,21 @@ namespace DT.Game {
     public delegate void HandleGameSessionFinished(GameSession finishedGameSession);
     public event HandleGameSessionFinished OnGameSessionFinished = delegate {};
     
+    public delegate void HandleScoreChanged(int newScore);
+    public event HandleScoreChanged OnScoreChanged = delegate {};
+    
+    [SerializeField, ReadOnly]
+    private int _score;
     public int Score {
-      get; private set;
+      get {
+        return this._score;
+      }
+      private set {
+        if (this._score != value) {
+          this._score = value;
+          this.OnScoreChanged.Invoke(this._score);
+        }
+      }
     }
     
     [SerializeField, ReadOnly]

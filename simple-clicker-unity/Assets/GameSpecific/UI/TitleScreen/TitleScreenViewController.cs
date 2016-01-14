@@ -5,7 +5,7 @@ using System.Collections.Generic;
 ﻿using UnityEngine;
 
 namespace DT.Game {
-  public class TitleScreenViewController : BasicViewController {
+  public class TitleScreenViewController : BasicViewController<TitleScreenView> {
     public TitleScreenViewController() {
       this._viewPrefabName = "TitleScreenView";
     }
